@@ -1,0 +1,555 @@
+/* ========================================
+   ADD PRODUCT PAGE
+======================================== */
+.add-product-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.add-product-header {
+  margin-bottom: 2rem;
+}
+
+.add-product-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.add-product-subtitle {
+  font-size: 1rem;
+  color: #718096;
+  margin: 0;
+}
+
+/* ========================================
+   FORM STYLES
+======================================== */
+.add-product-form {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-section {
+  margin-bottom: 1.75rem;
+}
+
+.form-section-half {
+  flex: 1;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.75rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-size: 0.95rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background: white;
+  color: #2d3748;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #a0aec0;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23718096' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  appearance: none;
+}
+
+/* ========================================
+   IMAGE UPLOAD
+======================================== */
+.image-upload-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.image-upload-box {
+  aspect-ratio: 1;
+  border: 2px dashed #cbd5e0;
+  border-radius: 8px;
+  background: #f7fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.image-upload-box:hover {
+  border-color: #4CAF50;
+  background: #f0fdf4;
+}
+
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.file-input {
+  display: none;
+}
+
+.upload-icon {
+  font-size: 2rem;
+  color: #a0aec0;
+  margin-bottom: 0.5rem;
+}
+
+.upload-text {
+  font-size: 0.875rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+.image-preview-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.remove-image-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  color: #e53e3e;
+  font-size: 1.2rem;
+}
+
+.remove-image-btn:hover {
+  transform: scale(1.1);
+  color: #c53030;
+}
+
+/* ========================================
+   HINTS / NOTES
+======================================== */
+.field-hint {
+  font-size: 0.825rem;
+  color: #718096;
+  margin: -0.25rem 0 0.75rem;
+}
+
+.required-mark {
+  color: #e53e3e;
+  font-weight: 700;
+}
+
+.optional-mark {
+  color: #a0aec0;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+/* ========================================
+   VARIANT-MODE QUESTION
+======================================== */
+.variant-choice-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.variant-choice-btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  border: 1.5px solid #e2e8f0;
+  background: white;
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.variant-choice-btn:hover {
+  border-color: #4CAF50;
+}
+
+.variant-choice-btn.active {
+  background: #4CAF50;
+  border-color: #4CAF50;
+  color: white;
+}
+
+.variant-note {
+  background: #f0fdf4;
+  border: 1px solid #c6f6d5;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin: -0.5rem 0 1.75rem;
+  color: #276749;
+}
+
+/* ========================================
+   ACTIVE TOGGLE
+======================================== */
+.toggle-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: #cbd5e0;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-checkbox:checked + .toggle-switch {
+  background: #4CAF50;
+}
+
+.toggle-checkbox:checked + .toggle-switch::after {
+  transform: translateX(20px);
+}
+
+.toggle-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+/* ========================================
+   COLOR VARIANTS
+======================================== */
+.section-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.add-color-btn,
+.add-size-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #f0fdf4;
+  color: #2f855a;
+  border: 1.5px solid #9ae6b4;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-color-btn:hover,
+.add-size-btn:hover {
+  background: #c6f6d5;
+}
+
+.color-variant-card {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  background: #fafcfb;
+}
+
+.color-variant-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.color-variant-index {
+  font-weight: 700;
+  color: #2d3748;
+  font-size: 1rem;
+}
+
+.remove-color-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #fff5f5;
+  color: #c53030;
+  border: 1.5px solid #feb2b2;
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.remove-color-btn:hover {
+  background: #fed7d7;
+}
+
+.color-image-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ========================================
+   SIZE TABLE
+======================================== */
+.size-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.size-table-head,
+.size-table-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 1fr 1fr auto;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.size-table-head span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.size-table-row .form-input {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.remove-size-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff5f5;
+  color: #c53030;
+  border: 1.5px solid #feb2b2;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.remove-size-btn:hover:not(:disabled) {
+  background: #fed7d7;
+}
+
+.remove-size-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   SUBMIT BUTTON
+======================================== */
+.submit-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.95rem 3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  margin-top: 1rem;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ========================================
+   ALERTS
+======================================== */
+.alert {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.alert-danger {
+  background-color: #fee;
+  border: 1px solid #fcc;
+  color: #c33;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+======================================== */
+
+/* Tablet (max-width: 991px) */
+@media (max-width: 991px) {
+  .add-product-form {
+    padding: 1.5rem;
+  }
+
+  .image-upload-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .add-product-page {
+    padding: 0;
+  }
+
+  .add-product-title {
+    font-size: 1.5rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .image-upload-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+
+  .size-table-head {
+    display: none;
+  }
+
+  .size-table-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'size sku'
+      'pricemod stock'
+      'remove remove';
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0.75rem;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .add-product-form {
+    padding: 1.25rem;
+    border-radius: 8px;
+  }
+
+  .add-product-title {
+    font-size: 1.35rem;
+  }
+
+  .upload-icon {
+    font-size: 1.5rem;
+  }
+
+  .upload-text {
+    font-size: 0.75rem;
+  }
+}

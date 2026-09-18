@@ -1,0 +1,865 @@
+/* ProductDetails.css */
+
+.pd-page {
+  min-height: 100vh;
+  background: #f7fafc;
+  padding: 2rem 0 4rem;
+}
+
+.pd-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 1rem;
+}
+
+.pd-loading .pd-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #48bb78;
+  border-radius: 50%;
+  animation: pd-spin 0.8s linear infinite;
+}
+
+@keyframes pd-spin {
+  to { transform: rotate(360deg); }
+}
+
+
+/* Product Details Container */
+.pd-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+/* Image Gallery */
+.pd-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pd-main-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: #f7fafc;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+.pd-discount-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: #48bb78;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.pd-thumbnail-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.pd-thumbnail {
+  aspect-ratio: 1;
+  background: #f7fafc;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.pd-thumbnail:hover {
+  border-color: #48bb78;
+}
+
+.pd-thumbnail.active {
+  border-color: #48bb78;
+  box-shadow: 0 0 0 2px rgba(72, 187, 120, 0.2);
+}
+
+.pd-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+}
+
+/* Product Info */
+.pd-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pd-category {
+  color: #48bb78;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pd-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  line-height: 1.2;
+}
+
+.pd-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pd-rating-count {
+  color: #718096;
+  font-size: 0.875rem;
+  margin-left: 0.25rem;
+}
+
+.pd-price-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pd-price-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pd-current-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.pd-original-price {
+  font-size: 1.25rem;
+  color: #a0aec0;
+  text-decoration: line-through;
+}
+
+.pd-save-amount {
+  background: #48bb7820;
+  color: #48bb78;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.pd-tax-info {
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+.pd-stock-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #48bb78;
+  font-weight: 600;
+}
+
+/* Variant Selection */
+.pd-variant-section label {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.pd-color-swatches,
+.pd-size-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.pd-color-swatch,
+.pd-size-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+  background: white;
+  color: #2d3748;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pd-color-swatch:hover,
+.pd-size-btn:hover:not(:disabled) {
+  border-color: #48bb78;
+}
+
+.pd-color-swatch.active,
+.pd-size-btn.active {
+  border-color: #48bb78;
+  background: #48bb78;
+  color: white;
+}
+
+.pd-size-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.pd-size-fixed {
+  cursor: default;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Quantity Section */
+.pd-quantity-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pd-quantity-section label {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.pd-quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pd-quantity-controls button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #2d3748;
+}
+
+.pd-quantity-controls button:hover:not(:disabled) {
+  background: #f7fafc;
+  color: #48bb78;
+}
+
+.pd-quantity-controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pd-quantity-value {
+  width: 50px;
+  text-align: center;
+  font-weight: 600;
+  color: #2d3748;
+  border-left: 2px solid #e2e8f0;
+  border-right: 2px solid #e2e8f0;
+  padding: 0.5rem;
+}
+
+/* Action Buttons */
+.pd-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pd-add-to-cart-btn,
+.pd-buy-now-btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pd-add-to-cart-btn:disabled,
+.pd-buy-now-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.pd-add-to-cart-btn {
+  background: white;
+  color: #48bb78;
+  border: 2px solid #48bb78;
+}
+
+.pd-add-to-cart-btn:hover {
+  background: #48bb7810;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.2);
+}
+
+.pd-add-to-cart-btn.in-cart {
+  background: #48bb78;
+  color: white;
+}
+
+.pd-buy-now-btn {
+  background: #48bb78;
+  color: white;
+}
+
+.pd-buy-now-btn:hover {
+  background: #38a169;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+}
+
+/* Features */
+.pd-features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 1.5rem;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.pd-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #2d3748;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Description Section */
+.pd-description-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.pd-description-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.pd-description-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pd-description-content li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #4a5568;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.pd-description-content li:last-child {
+  border-bottom: none;
+}
+
+.pd-description-content li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #48bb78;
+  font-weight: bold;
+}
+
+.pd-description-content p {
+  color: #4a5568;
+  line-height: 1.8;
+}
+
+/* Related Products */
+.pd-related-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.pd-related-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+}
+
+.pd-related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.pd-related-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.pd-related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: #48bb78;
+}
+
+.pd-related-image {
+  position: relative;
+  aspect-ratio: 1;
+  background: #f7fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-related-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+.pd-related-discount-badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: #48bb78;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.pd-related-info {
+  padding: 1rem;
+}
+
+.pd-related-category {
+  color: #718096;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.pd-related-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pd-related-price {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pd-related-current-price {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #48bb78;
+}
+
+.pd-related-original-price {
+  font-size: 0.875rem;
+  color: #a0aec0;
+  text-decoration: line-through;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .pd-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .pd-gallery {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .pd-related-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pd-features {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .pd-feature-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  .pd-feature-item svg {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .pd-page {
+    padding: 1rem 0 3rem;
+  }
+
+  .pd-container {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .pd-gallery {
+    max-width: 100%;
+  }
+
+  .pd-main-image {
+    border-radius: 8px;
+  }
+
+  .pd-discount-badge {
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.813rem;
+  }
+
+  .pd-thumbnail-images {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  .pd-thumbnail {
+    border-radius: 6px;
+  }
+
+  /* Product Info Adjustments */
+  .pd-info {
+    gap: 1.25rem;
+  }
+
+  .pd-category {
+    font-size: 0.813rem;
+  }
+
+  .pd-name {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .pd-rating svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .pd-rating-count {
+    font-size: 0.813rem;
+  }
+
+  .pd-current-price {
+    font-size: 1.75rem;
+  }
+
+  .pd-original-price {
+    font-size: 1.125rem;
+  }
+
+  .pd-save-amount {
+    font-size: 0.813rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .pd-tax-info {
+    font-size: 0.813rem;
+  }
+
+  .pd-stock-status {
+    font-size: 0.875rem;
+  }
+
+  .pd-stock-status svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Quantity Section */
+  .pd-quantity-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .pd-quantity-section label {
+    font-size: 0.938rem;
+  }
+
+  .pd-quantity-controls button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .pd-quantity-value {
+    width: 45px;
+    font-size: 0.938rem;
+  }
+
+  /* Action Buttons */
+  .pd-actions {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+    margin-top: 1rem;
+  }
+
+  .pd-add-to-cart-btn,
+  .pd-buy-now-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+  }
+
+  .pd-add-to-cart-btn svg,
+  .pd-buy-now-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Features */
+  .pd-features {
+    flex-direction: column;
+    padding: 1rem 1.25rem;
+    gap: 0.875rem;
+    margin-top: 1.25rem;
+    background: #f7fafc;
+    border-radius: 8px;
+  }
+
+  .pd-feature-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 0.75rem;
+    font-size: 0.938rem;
+    padding: 0.375rem 0;
+    background: transparent;
+  }
+
+  .pd-feature-item svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+
+  .pd-feature-item span {
+    font-weight: 500;
+    color: #2d3748;
+    line-height: 1.4;
+  }
+
+  /* Description Section */
+  .pd-description-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .pd-description-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .pd-description-content li {
+    padding: 0.625rem 0;
+    font-size: 0.875rem;
+    padding-left: 1.25rem;
+  }
+
+  .pd-description-content p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  /* Related Products */
+  .pd-related-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .pd-related-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .pd-related-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .pd-related-card {
+    border-radius: 10px;
+  }
+
+  .pd-related-image img {
+    padding: 0.75rem;
+  }
+
+  .pd-related-discount-badge {
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.688rem;
+  }
+
+  .pd-related-info {
+    padding: 0.875rem;
+  }
+
+  .pd-related-category {
+    font-size: 0.688rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .pd-related-name {
+    font-size: 0.938rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pd-related-current-price {
+    font-size: 1rem;
+  }
+
+  .pd-related-original-price {
+    font-size: 0.813rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pd-page {
+    padding: 0.75rem 0 2.5rem;
+  }
+
+  .pd-container {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .pd-name {
+    font-size: 1.25rem;
+  }
+
+  .pd-current-price {
+    font-size: 1.5rem;
+  }
+
+  .pd-original-price {
+    font-size: 1rem;
+  }
+
+  .pd-thumbnail-images {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  /* Improved button styling for small mobile */
+  .pd-add-to-cart-btn,
+  .pd-buy-now-btn {
+    padding: 0.938rem 1.25rem;
+    font-size: 0.938rem;
+    font-weight: 600;
+  }
+
+  /* Better features layout */
+  .pd-features {
+    padding: 0.875rem 1rem;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    background: #f7fafc;
+    border-radius: 8px;
+  }
+
+  .pd-feature-item {
+    font-size: 0.875rem;
+    gap: 0.625rem;
+    padding: 0.25rem 0;
+  }
+
+  .pd-feature-item svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .pd-feature-item span {
+    line-height: 1.4;
+  }
+
+  .pd-description-section,
+  .pd-related-section {
+    padding: 1.25rem 1rem;
+    border-radius: 10px;
+  }
+
+  .pd-related-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pd-related-card {
+    max-width: 100%;
+  }
+}

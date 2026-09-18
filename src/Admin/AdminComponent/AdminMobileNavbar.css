@@ -1,0 +1,350 @@
+/* ========================================
+   SELLER MOBILE NAVBAR - BOTTOM FIXED
+======================================== */
+.admin-mobile-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: #2c3e50;
+  display: none; /* Hidden by default, shown on mobile */
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 0.5rem;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+/* ========================================
+   MOBILE NAV ITEMS
+======================================== */
+.admin-mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  min-width: 60px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.admin-mobile-nav-item:hover {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.admin-mobile-nav-item.active {
+  color: #ffffff;
+  background: rgba(76, 175, 80, 0.15);
+}
+
+.admin-mobile-nav-item.active .admin-mobile-nav-icon {
+  color: #4CAF50;
+}
+
+/* ========================================
+   NAV ICONS
+======================================== */
+.admin-mobile-nav-icon {
+  position: relative;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================================
+   NAV LABELS
+======================================== */
+.admin-mobile-nav-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* ========================================
+   BADGES (NOTIFICATION COUNTS)
+======================================== */
+.admin-mobile-nav-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.2rem 0.4rem;
+  border-radius: 10px;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(76, 175, 80, 0.4);
+}
+
+.admin-mobile-nav-badge-warning {
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+  box-shadow: 0 2px 6px rgba(255, 152, 0, 0.4);
+}
+
+/* ========================================
+   ACCOUNT DROPDOWN MENU
+======================================== */
+.admin-mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.admin-mobile-account-menu {
+  position: fixed;
+  bottom: 70px;
+  right: 10px;
+  background: #2c3e50;
+  border-radius: 12px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 2000;
+  min-width: 280px;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Account Header */
+.admin-account-header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.admin-account-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.admin-account-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.admin-account-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-account-email {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Divider */
+.admin-account-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 10px;
+}
+
+/* Menu Item */
+.admin-account-menu-item {
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.admin-account-menu-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.admin-account-menu-item:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-account-menu-icon {
+  font-size: 1.3rem;
+  color: #e74c3c;
+}
+
+/* ========================================
+   SHOW ON MOBILE ONLY
+======================================== */
+@media (max-width: 991.98px) {
+  .admin-mobile-navbar {
+    display: flex;
+  }
+
+  /* Add padding to bottom of content to prevent navbar overlap */
+  .admin-layout-content {
+    padding-bottom: 90px !important;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - TABLET
+======================================== */
+@media (max-width: 768px) {
+  .admin-mobile-navbar {
+    height: 65px;
+  }
+
+  .admin-mobile-nav-icon {
+    font-size: 1.4rem;
+  }
+
+  .admin-mobile-nav-label {
+    font-size: 0.65rem;
+  }
+
+  .admin-mobile-account-menu {
+    bottom: 65px;
+    min-width: 260px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - SMALL MOBILE
+======================================== */
+@media (max-width: 480px) {
+  .admin-mobile-navbar {
+    height: 60px;
+    padding: 0 0.25rem;
+  }
+
+  .admin-mobile-nav-item {
+    padding: 0.4rem 0.5rem;
+    min-width: 55px;
+  }
+
+  .admin-mobile-nav-icon {
+    font-size: 1.3rem;
+  }
+
+  .admin-mobile-nav-label {
+    font-size: 0.6rem;
+  }
+
+  .admin-mobile-nav-badge {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.35rem;
+    min-width: 16px;
+    height: 16px;
+  }
+
+  .admin-mobile-account-menu {
+    bottom: 60px;
+    right: 5px;
+    min-width: 240px;
+  }
+
+  .admin-account-header {
+    padding: 15px;
+  }
+
+  .admin-account-avatar {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .admin-account-name {
+    font-size: 0.95rem;
+  }
+
+  .admin-account-email {
+    font-size: 0.8rem;
+  }
+
+  .admin-account-menu-item {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+.admin-mobile-nav-item:focus,
+.admin-account-menu-item:focus {
+  outline: 2px solid #4CAF50;
+  outline-offset: 2px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .admin-mobile-nav-item,
+  .admin-mobile-overlay,
+  .admin-mobile-account-menu {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ========================================
+   SAFE AREA INSETS (for iOS notch)
+======================================== */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .admin-mobile-navbar {
+    padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+    height: calc(70px + env(safe-area-inset-bottom));
+  }
+
+  .admin-mobile-account-menu {
+    bottom: calc(70px + env(safe-area-inset-bottom));
+  }
+}

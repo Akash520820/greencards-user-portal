@@ -1,0 +1,130 @@
+.admin-security-page {
+  padding: 2rem;
+  max-width: 640px;
+}
+
+.admin-security-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.admin-security-header-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #e7f5ec;
+  color: #198754;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.admin-security-title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.admin-security-subtitle {
+  margin: 0;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.admin-security-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-security-card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+.admin-security-card-desc {
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.admin-security-mfa-status.enabled {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #15803d;
+  font-weight: 600;
+}
+
+.admin-security-mfa-enroll {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.admin-security-qr {
+  width: 180px;
+  height: 180px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.admin-security-manual-secret {
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.admin-security-input {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.admin-security-password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.admin-security-row-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.admin-security-btn {
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  background: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-security-btn.primary {
+  background: #198754;
+  color: #fff;
+  border-color: #198754;
+}
+
+.admin-security-btn.danger {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-color: #fecaca;
+  margin-left: auto;
+}
+
+.admin-security-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

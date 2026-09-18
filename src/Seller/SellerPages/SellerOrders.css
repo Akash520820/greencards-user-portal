@@ -1,0 +1,189 @@
+.seller-orders-page {
+  max-width: 900px;
+}
+
+.so-header {
+  margin-bottom: 20px;
+}
+
+.so-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 4px 0;
+}
+
+.so-header p {
+  color: #718096;
+  margin: 0;
+}
+
+.so-error {
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+  color: #e53e3e;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.so-loading,
+.so-empty {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 48px 24px;
+  text-align: center;
+  color: #718096;
+}
+
+.so-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.so-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.so-card-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.so-order-id {
+  font-weight: 700;
+  color: #2d3748;
+  margin-right: 12px;
+}
+
+.so-order-date {
+  color: #a0aec0;
+  font-size: 0.9rem;
+}
+
+.so-card-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.so-status-badge {
+  border: 1px solid;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.so-subtotal {
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.so-card-body {
+  border-top: 1px solid #edf2f7;
+  padding: 16px 20px;
+  background: #fafbfc;
+}
+
+.so-customer,
+.so-shipping {
+  color: #4a5568;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.so-items {
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.so-item-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.so-item-thumb {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.so-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.so-item-name {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.9rem;
+}
+
+.so-item-variant {
+  color: #a0aec0;
+  font-size: 0.8rem;
+}
+
+.so-item-qty {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.so-item-price {
+  font-weight: 600;
+  color: #2d3748;
+  min-width: 70px;
+  text-align: right;
+}
+
+.so-payment {
+  display: flex;
+  gap: 24px;
+  color: #718096;
+  font-size: 0.85rem;
+  border-top: 1px solid #edf2f7;
+  padding-top: 10px;
+  text-transform: capitalize;
+}
+
+.so-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  color: #4a5568;
+}
+
+.so-pagination button {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.so-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

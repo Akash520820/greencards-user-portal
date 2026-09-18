@@ -1,0 +1,319 @@
+/* Backdrop */
+.auth-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+  backdrop-filter: blur(4px);
+  animation: fadeInBackdrop 0.3s ease forwards;
+}
+
+/* Modal Container */
+.auth-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+  animation: slideInModal 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  /* Cap the whole modal to the viewport height so it can never extend past
+     the top/bottom edges of a short mobile screen (which is what was
+     clipping the submit button before). */
+  max-height: 90vh;
+  width: 90vw;
+  max-width: 420px;
+}
+
+.auth-modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* Header */
+.auth-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.auth-modal-header-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: #2d3748;
+}
+
+.auth-modal-header-close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #718096;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.auth-modal-header-close-btn:hover {
+  color: #2d3748;
+  background-color: #f7fafc;
+  transform: rotate(90deg);
+}
+
+/* Form Groups */
+.auth-form-input-group {
+  margin-bottom: 1.25rem;
+}
+
+/* Two-column row for pairing fields (Full Name + Username, Phone + Email) —
+   this is what shortens the signup form significantly. Stacks back to one
+   column on narrow screens via the media query further down. */
+.auth-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1rem;
+}
+
+.auth-form-row .auth-form-input-group {
+  margin-bottom: 1.25rem;
+}
+
+/* Compact circular avatar picker, replacing the plain native file input */
+.auth-form-avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.auth-form-avatar-picker {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px dashed #cbd5e0;
+  background: #f7fafc;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.auth-form-avatar-picker:hover {
+  border-color: #198754;
+}
+
+.auth-form-avatar-picker img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.auth-form-avatar-placeholder {
+  font-size: 1.5rem;
+  color: #a0aec0;
+  line-height: 1;
+}
+
+.auth-form-avatar-label {
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+.auth-form-input-group label {
+  display: block;
+  font-weight: 500;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.auth-form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.auth-form-input::placeholder {
+  color: #cbd5e0;
+}
+
+.auth-form-input:focus {
+  outline: none;
+  border-color: #198754;
+  box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Toggle Text */
+.auth-form-toggle-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+
+.auth-form-toggle-link {
+  background: none;
+  border: none;
+  color: #198754;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.auth-form-toggle-link:hover {
+  color: #146c43;
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.auth-form-submit-btn {
+  width: 100%;
+  padding: 0.875rem;
+  background: linear-gradient(135deg, #198754, #146c43);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(25, 135, 84, 0.2);
+}
+
+.auth-form-submit-btn:hover {
+  background: linear-gradient(135deg, #146c43, #0f5132);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(25, 135, 84, 0.4);
+}
+
+.auth-form-submit-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(25, 135, 84, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInBackdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInModal {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Loading state */
+.auth-form-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(25, 135, 84, 0.2);
+}
+
+.auth-form-submit-btn:disabled:hover {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(25, 135, 84, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .auth-modal-container {
+    max-height: 95vh;
+    width: 95vw;
+  }
+
+  .auth-modal-content {
+    padding: 1.5rem;
+    max-width: 95vw;
+    max-height: 95vh;
+    border-radius: 12px;
+  }
+  
+  .auth-modal-header-title {
+    font-size: 1.25rem;
+  }
+  
+  .auth-form-input {
+    padding: 0.65rem 0.875rem;
+    font-size: 0.9rem;
+  }
+  
+  .auth-form-submit-btn {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .auth-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* Focus states */
+.auth-form-input:focus-visible {
+  outline: 2px solid #198754;
+  outline-offset: 2px;
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .auth-modal-backdrop,
+  .auth-modal-container,
+  .auth-modal-content,
+  .auth-modal-header-title,
+  .auth-form-input-group,
+  .auth-form-toggle-text,
+  .auth-form-submit-btn {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .auth-form-input:focus {
+    transform: none;
+  }
+  
+  .auth-form-submit-btn:hover {
+    transform: none;
+  }
+  
+  .auth-modal-header-close-btn:hover {
+    transform: none;
+  }
+}

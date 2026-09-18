@@ -1,0 +1,735 @@
+/* MyOrders.css */
+
+/* ========================================
+   MY ORDERS PAGE
+======================================== */
+.my-orders-page {
+  padding: 40px 0 80px 0;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* ========================================
+   AUTH / LOADING STATE (guest prompt & orders fetch)
+======================================== */
+.orders-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 50vh;
+  gap: 16px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  padding: 60px 20px;
+}
+
+.orders-loading .spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #4CAF50;
+  border-radius: 50%;
+  animation: orders-spin 0.8s linear infinite;
+}
+
+.orders-loading p {
+  color: #718096;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+@keyframes orders-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================
+   ORDERS HEADER
+======================================== */
+.orders-header {
+  margin-bottom: 30px;
+}
+
+.orders-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 5px;
+}
+
+.orders-subtitle {
+  font-size: 1rem;
+  color: #718096;
+  margin: 0;
+}
+
+/* ========================================
+   FILTER BUTTONS
+======================================== */
+.orders-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: 2px solid #e2e8f0;
+  background: white;
+  color: #4a5568;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  border-color: #4CAF50;
+  background: #f7fef9;
+}
+
+.filter-btn.active {
+  background: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+/* ========================================
+   NO ORDERS STATE
+======================================== */
+.no-orders {
+  text-align: center;
+  padding: 80px 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.no-orders svg {
+  margin-bottom: 20px;
+}
+
+.no-orders h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.no-orders p {
+  font-size: 1rem;
+  color: #718096;
+  margin-bottom: 30px;
+}
+
+.start-shopping-btn {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  color: white;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start-shopping-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+/* ========================================
+   ORDERS LIST
+======================================== */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ========================================
+   ORDER CARD
+======================================== */
+.order-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.order-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Order Card Header */
+.order-card-header {
+  padding: 20px;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.order-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.order-id {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0;
+}
+
+.order-status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.order-header-right {
+  text-align: right;
+}
+
+.order-date {
+  font-size: 0.9rem;
+  color: #718096;
+  margin: 0;
+}
+
+/* Order Card Body */
+.order-card-body {
+  padding: 20px;
+}
+
+/* Order Items Preview */
+.order-items-preview {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.order-item-mini {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  background: #f7fafc;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.order-item-mini img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  background: white;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.item-mini-details {
+  flex: 1;
+}
+
+.item-mini-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 4px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item-mini-qty {
+  font-size: 0.8rem;
+  color: #718096;
+  margin: 0;
+}
+
+.more-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  background: #e7f5ec;
+  color: #4CAF50;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+
+/* Order Info Grid */
+.order-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.order-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 1rem;
+  color: #2d3748;
+  font-weight: 600;
+}
+
+/* Order Card Footer */
+.order-card-footer {
+  padding: 16px 20px;
+  background: #f7fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.view-details-btn {
+  flex: 1;
+  min-width: 150px;
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-details-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+.cancel-order-btn {
+  background: white;
+  border: 2px solid #e53e3e;
+  color: #e53e3e;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-order-btn:hover {
+  background: #fff5f5;
+}
+
+/* ========================================
+   MODAL OVERLAY (shared by Order Details & Return Request modals)
+   These classes were referenced in the JSX but had no styles anywhere
+   in the project, so both modals were rendering inline in the page flow
+   instead of as a proper centered, dimmed overlay.
+======================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  z-index: 1;
+}
+
+.modal-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0;
+}
+
+.modal-close-btn {
+  background: #f7fafc;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #718096;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: #fed7d7;
+  color: #e53e3e;
+}
+
+/* ========================================
+   ORDER DETAILS MODAL
+======================================== */
+.order-details-modal {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+/* Details Section */
+.details-section {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.details-section:last-child {
+  border-bottom: none;
+}
+
+.section-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.details-section h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 16px 0;
+}
+
+.order-status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Details Grid */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-label {
+  font-size: 0.85rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+.detail-value {
+  font-size: 0.95rem;
+  color: #2d3748;
+  font-weight: 600;
+}
+
+/* Address Box */
+.address-box {
+  background: #f7fafc;
+  padding: 16px;
+  border-radius: 12px;
+  line-height: 1.6;
+}
+
+/* Order Items List */
+.order-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.order-detail-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: #f7fafc;
+  border-radius: 12px;
+  align-items: center;
+}
+
+.order-detail-item .item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background: white;
+  border-radius: 8px;
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.order-detail-item .item-details {
+  flex: 1;
+}
+
+.order-detail-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 4px 0;
+}
+
+.order-detail-item .item-category {
+  font-size: 0.85rem;
+  color: #a0aec0;
+  margin: 0 0 4px 0;
+  text-transform: capitalize;
+}
+
+.order-detail-item .item-quantity {
+  font-size: 0.85rem;
+  color: #718096;
+  margin: 0;
+}
+
+.order-detail-item .item-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3748;
+  flex-shrink: 0;
+}
+
+/* Price Breakdown */
+.price-breakdown {
+  background: #f7fafc;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+.price-row:last-child {
+  margin-bottom: 0;
+}
+
+.free-text {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.price-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 12px 0;
+}
+
+.total-row {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2d3748;
+  padding-top: 12px;
+  border-top: 2px solid #e2e8f0;
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+======================================== */
+
+/* Tablet */
+@media (max-width: 991px) {
+  .order-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-header-right {
+    text-align: left;
+  }
+
+  .order-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .order-details-modal {
+    max-width: 95%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .my-orders-page {
+    padding: 30px 0 80px 0;
+  }
+
+  .orders-title {
+    font-size: 1.5rem;
+  }
+
+  .orders-filters {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .order-card-header,
+  .order-card-body,
+  .order-card-footer {
+    padding: 16px;
+  }
+
+  .order-items-preview {
+    flex-direction: column;
+  }
+
+  .order-item-mini {
+    min-width: 100%;
+  }
+
+  .order-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-card-footer {
+    flex-direction: column;
+  }
+
+  .view-details-btn,
+  .cancel-order-btn {
+    width: 100%;
+  }
+
+  .modal-body {
+    padding: 16px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-detail-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .order-detail-item .item-image {
+    width: 100%;
+    height: 120px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .my-orders-page {
+    padding: 20px 0 70px 0;
+  }
+
+  .orders-title {
+    font-size: 1.3rem;
+  }
+
+  .filter-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .order-id {
+    font-size: 1rem;
+  }
+
+  .order-status {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+
+  .no-orders {
+    padding: 60px 16px;
+  }
+}
+/* Add these styles to your existing MyOrders.css */
+
+/* Make order items clickable with hover effects */
+.order-item-mini {
+  transition: all 0.3s ease;
+}
+
+.order-item-mini:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-item-mini:hover .item-mini-name {
+  color: #48bb78;
+}
+
+/* Make modal items clickable with hover effects */
+.order-detail-item {
+  transition: all 0.3s ease;
+}
+
+.order-detail-item:hover {
+  background: #f7fafc;
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-detail-item:hover h4 {
+  color: #48bb78;
+}

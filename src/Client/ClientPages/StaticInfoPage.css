@@ -1,0 +1,170 @@
+/* ========================================
+   STATIC INFO PAGE (FAQs, Delivery Info,
+   Return & Refund Policy, Payment Methods)
+======================================== */
+.static-info-page {
+  padding: 40px 0 80px;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.static-info-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.static-info-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.static-info-subtitle {
+  font-size: 1.1rem;
+  color: #718096;
+  margin: 0;
+}
+
+.static-info-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.static-info-content p {
+  color: #4a5568;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+/* Loading state — matches .products-loading used on AllProduct */
+.static-info-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: 1rem;
+}
+
+.static-info-loading .spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #48bb78;
+  border-radius: 50%;
+  animation: static-info-spin 0.8s linear infinite;
+}
+
+.static-info-loading p {
+  color: #718096;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@keyframes static-info-spin {
+  to { transform: rotate(360deg); }
+}
+
+.static-info-error {
+  text-align: center;
+  color: #718096;
+  padding: 60px 20px;
+}
+
+/* FAQ accordion */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 18px 20px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2d3748;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  gap: 12px;
+}
+
+.faq-question:hover {
+  color: #4CAF50;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  color: #4CAF50;
+}
+
+.faq-icon.open {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 20px 18px;
+  color: #718096;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+/* Payment methods list */
+.payment-methods-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.payment-methods-item {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.payment-methods-item h4 {
+  color: #2d3748;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.payment-methods-item p {
+  color: #718096;
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 576px) {
+  .static-info-title {
+    font-size: 1.8rem;
+  }
+  .static-info-content,
+  .payment-methods-item {
+    padding: 20px;
+  }
+}

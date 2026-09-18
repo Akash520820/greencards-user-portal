@@ -1,0 +1,94 @@
+/* ========================================
+   CATEGORIES SECTION
+======================================== */
+.categories-section {
+  padding: 50px 0;
+  background-color: #ffffff;
+}
+
+.categories-section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* ========================================
+   CATEGORIES GRID
+======================================== */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 20px;
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+======================================== */
+
+/* Large Desktop (max-width: 1400px) */
+@media (max-width: 1400px) {
+  .categories-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Desktop (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .categories-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet (max-width: 991px) */
+@media (max-width: 991px) {
+  .categories-section {
+    padding: 40px 0;
+  }
+  
+  .categories-section-title {
+    font-size: 1.75rem;
+    margin-bottom: 25px;
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+}
+
+/* Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .categories-section {
+    padding: 30px 0;
+  }
+  
+  .categories-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .categories-section {
+    padding: 25px 0;
+  }
+  
+  .categories-section-title {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}

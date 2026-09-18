@@ -1,0 +1,260 @@
+.seller-apps-page {
+  max-width: 900px;
+}
+
+.sa-header {
+  margin-bottom: 20px;
+}
+
+.sa-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 12px 0;
+}
+
+.sa-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.sa-tab {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+}
+
+.sa-tab.active {
+  background: #4CAF50;
+  color: #fff;
+  border-color: #4CAF50;
+}
+
+.sa-error {
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+  color: #e53e3e;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.sa-loading,
+.sa-empty {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 48px 24px;
+  text-align: center;
+  color: #718096;
+}
+
+.sa-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sa-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.sa-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.sa-applicant {
+  display: flex;
+  gap: 14px;
+}
+
+.sa-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.sa-applicant h3 {
+  margin: 0 0 2px 0;
+  font-size: 1.15rem;
+  color: #2d3748;
+}
+
+.sa-applicant-name,
+.sa-applicant-phone {
+  margin: 0;
+  color: #718096;
+  font-size: 0.85rem;
+}
+
+.sa-gst {
+  color: #a0aec0;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.sa-description {
+  color: #4a5568;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.sa-bank-section {
+  background: #f7fafc;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+
+.sa-bank-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.sa-bank-header h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #2d3748;
+}
+
+.sa-verify-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.sa-bank-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px 20px;
+  margin-bottom: 12px;
+}
+
+.sa-bank-grid > div {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #2d3748;
+}
+
+.sa-bank-label {
+  color: #a0aec0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 2px;
+}
+
+.sa-capitalize {
+  text-transform: capitalize;
+}
+
+.sa-bank-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.sa-decision-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sa-reject-form {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  min-width: 260px;
+}
+
+.sa-reject-form input {
+  flex: 1;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+.sa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.sa-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sa-btn-verify {
+  background: #f0fff4;
+  color: #2f855a;
+  border: 1px solid #c6f6d5;
+}
+
+.sa-btn-reject-bank {
+  background: #fff5f5;
+  color: #e53e3e;
+  border: 1px solid #fed7d7;
+}
+
+.sa-btn-approve {
+  background: #4CAF50;
+  color: #fff;
+}
+
+.sa-btn-approve:hover:not(:disabled) {
+  background: #43a047;
+}
+
+.sa-btn-reject {
+  background: #fff;
+  color: #e53e3e;
+  border: 1px solid #fed7d7;
+}
+
+.sa-card-compact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.sa-btn-suspend {
+  background: #fff5f5;
+  color: #e53e3e;
+  border: 1px solid #fed7d7;
+}
+
+.sa-btn-suspend:hover:not(:disabled) {
+  background: #fed7d7;
+}

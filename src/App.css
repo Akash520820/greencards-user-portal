@@ -1,0 +1,38 @@
+/* ========================================
+   FIXED NAVBAR SPACING - CRITICAL!
+======================================== */
+
+/* Body padding for fixed navbar */
+body {
+  padding-top: 80px !important;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+/* Root element */
+#root {
+  min-height: 100vh;
+}
+
+/* Tablet - Adjust padding for hamburger menu navbar */
+@media (max-width: 1000px) {
+  body {
+    padding-top: 75px !important;
+  }
+}
+
+/* Mobile - Logo only navbar + bottom navbar */
+@media (max-width: 767px) {
+  body {
+    padding-top: 65px !important;
+    padding-bottom: 70px !important;
+  }
+}
+
+/* Small mobile optimization */
+@media (max-width: 576px) {
+  body {
+    padding-top: 60px !important;
+    padding-bottom: 65px !important;
+  }
+}

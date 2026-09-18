@@ -1,0 +1,117 @@
+.seller-sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background: #fff;
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+}
+
+.seller-sidebar-brand {
+  padding: 22px 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3748;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.seller-sidebar-nav {
+  flex: 1;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.seller-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #4a5568;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+.seller-sidebar-link:hover {
+  background: #f0fff4;
+  color: #2f855a;
+}
+
+.seller-sidebar-link.active {
+  background: #4CAF50;
+  color: #fff;
+}
+
+.seller-sidebar-icon {
+  font-size: 1.05rem;
+}
+
+.seller-sidebar-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #edf2f7;
+}
+
+.seller-sidebar-user-name {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.9rem;
+}
+
+.seller-sidebar-user-email {
+  color: #a0aec0;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+  word-break: break-all;
+}
+
+.seller-sidebar-logout-btn {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px;
+  font-weight: 600;
+  color: #e53e3e;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.seller-sidebar-logout-btn:hover {
+  background: #fff5f5;
+}
+
+@media (max-width: 900px) {
+  .seller-sidebar {
+    width: 100%;
+    min-height: auto;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .seller-sidebar-brand {
+    border-bottom: none;
+    padding: 14px 16px;
+    width: 100%;
+  }
+
+  .seller-sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 12px 12px 12px;
+    gap: 8px;
+  }
+
+  .seller-sidebar-footer {
+    display: none;
+  }
+}

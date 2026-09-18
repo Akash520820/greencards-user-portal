@@ -1,0 +1,1411 @@
+/* ========================================
+   MODERN SELLER DASHBOARD - MATERIAL DESIGN
+   WITH BEAUTIFUL WELCOME CARD
+======================================== */
+
+/* Global Container */
+.admin-dashboard {
+  background: #f5f7fa;
+  min-height: 100vh;
+  padding: 2rem;
+  margin: 0;
+  width: 100%;
+}
+
+/* ========================================
+   WELCOME CARD - BEAUTIFUL DESIGN
+======================================== */
+.welcome-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.6s ease-out;
+}
+
+.welcome-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+.welcome-card-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-emoji {
+  display: inline-block;
+  font-size: 2.5rem;
+  animation: wave 2s ease-in-out infinite;
+  transform-origin: 70% 70%;
+  margin-left: 0.25rem;
+}
+
+.dashboard-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.decorative-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  10%, 30% {
+    transform: rotate(14deg);
+  }
+  20%, 40% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(-4deg);
+  }
+  70% {
+    transform: rotate(6deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================
+   STATS CARDS - MATERIAL DESIGN
+======================================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: visible;
+}
+
+.stat-card::before {
+  display: none;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon Box - Elevated with Shadow */
+.stat-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: -10px;
+}
+
+.stat-card-primary .stat-icon {
+  background: linear-gradient(195deg, #49a3f1, #1A73E8);
+}
+
+.stat-card-success .stat-icon {
+  background: linear-gradient(195deg, #66BB6A, #43A047);
+}
+
+.stat-card-warning .stat-icon {
+  background: linear-gradient(195deg, #FFA726, #FB8C00);
+}
+
+.stat-card-info .stat-icon {
+  background: linear-gradient(195deg, #EC407A, #D81B60);
+}
+
+/* Stat Content */
+.stat-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-header {
+  display: none;
+}
+
+.info-icon {
+  display: none;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #67748e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #344767;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.stat-action {
+  display: none;
+}
+
+.stat-trend {
+  font-size: 0.875rem;
+  color: #67748e;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stat-trend.positive {
+  color: #4CAF50;
+}
+
+.stat-trend.negative {
+  color: #f44336;
+}
+
+.stat-trend i {
+  font-size: 1rem;
+}
+
+/* ========================================
+   MAIN CONTENT GRID
+======================================== */
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.left-section,
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ========================================
+   SECTIONS - MATERIAL DESIGN
+======================================== */
+.recent-orders-section,
+.quick-actions-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #344767;
+  margin: 0;
+}
+
+.view-all-btn {
+  background: transparent;
+  border: none;
+  color: #1A73E8;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.view-all-btn:hover {
+  background: rgba(26, 115, 232, 0.08);
+}
+
+/* ========================================
+   ORDERS TABLE - MODERN STYLE
+======================================== */
+.orders-table-container {
+  background: transparent;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table thead {
+  background: transparent;
+}
+
+.orders-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #67748e;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.orders-table td {
+  padding: 1rem;
+  color: #344767;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #f0f2f5;
+  font-weight: 500;
+}
+
+.orders-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.orders-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.customer-cell {
+  font-weight: 600;
+  color: #344767;
+}
+
+.product-cell {
+  color: #67748e;
+}
+
+.amount-cell {
+  font-weight: 700;
+  color: #4CAF50;
+}
+
+.date-cell {
+  color: #67748e;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.status-pending {
+  background: rgba(251, 140, 0, 0.15);
+  color: #FB8C00;
+}
+
+.status-delivered {
+  background: rgba(76, 175, 80, 0.15);
+  color: #43A047;
+}
+
+.status-processing {
+  background: rgba(26, 115, 232, 0.15);
+  color: #1A73E8;
+}
+
+/* ========================================
+   QUICK ACTIONS GRID
+======================================== */
+.quick-actions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quick-action-card {
+  background: transparent;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+}
+
+.quick-action-card:hover {
+  border-color: #1A73E8;
+  background: rgba(26, 115, 232, 0.03);
+  transform: translateX(4px);
+}
+
+.quick-action-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(195deg, #66BB6A, #43A047);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(67, 160, 71, 0.3);
+}
+
+.quick-action-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #344767;
+  margin: 0 0 0.25rem 0;
+}
+
+.quick-action-desc {
+  font-size: 0.8rem;
+  color: #67748e;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ========================================
+   ALERT BANNER - MODERN STYLE
+======================================== */
+.alert-banner {
+  background: linear-gradient(195deg, #FFA726, #FB8C00);
+  border: none;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 20px rgba(251, 140, 0, 0.3);
+  color: white;
+  margin: 0 0 2rem 0;
+}
+
+.alert-banner i {
+  font-size: 2rem;
+  color: white;
+}
+
+.alert-banner span {
+  flex: 1;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+}
+
+.alert-action {
+  background: white;
+  color: #FB8C00;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.alert-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   LOADING STATE
+======================================== */
+.dashboard-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+  background: #f5f7fa;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e9ecef;
+  border-top: 4px solid #1A73E8;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ========================================
+   MOBILE CARD VIEW
+======================================== */
+.mobile-orders-list {
+  display: none;
+}
+
+.mobile-order-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #1A73E8;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.mobile-order-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.mobile-order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 0.75rem;
+}
+
+.mobile-order-customer {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #344767;
+  margin: 0 0 0.25rem 0;
+}
+
+.mobile-order-date {
+  font-size: 0.8rem;
+  color: #67748e;
+}
+
+.mobile-order-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mobile-order-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-order-label {
+  font-size: 0.8rem;
+  color: #67748e;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.mobile-order-value {
+  font-size: 0.875rem;
+  color: #344767;
+  font-weight: 600;
+}
+
+.mobile-order-amount {
+  font-size: 1.1rem;
+  color: #4CAF50;
+  font-weight: 700;
+}
+
+/* ========================================
+   TABLET RESPONSIVE (768px - 1024px)
+======================================== */
+@media (max-width: 1024px) {
+  .admin-dashboard {
+    padding: 1.5rem;
+  }
+
+  .welcome-card {
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+  }
+
+  .dashboard-title {
+    font-size: 2.25rem;
+  }
+
+  .welcome-emoji {
+    font-size: 2.25rem;
+  }
+
+  .dashboard-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .stat-card {
+    padding: 1.25rem;
+  }
+
+  .stat-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.6rem;
+    top: -8px;
+  }
+
+  .stat-value {
+    font-size: 1.6rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recent-orders-section,
+  .quick-actions-section {
+    padding: 1.5rem;
+  }
+
+  .quick-actions-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+
+  .quick-action-card {
+    padding: 1rem;
+  }
+
+  .quick-action-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.35rem;
+  }
+
+  .orders-table th {
+    font-size: 0.7rem;
+    padding: 0.625rem 0.75rem;
+  }
+
+  .orders-table td {
+    font-size: 0.8rem;
+    padding: 0.875rem 0.75rem;
+  }
+
+  .status-badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.625rem;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE (< 768px)
+======================================== */
+@media (max-width: 767px) {
+  .admin-dashboard {
+    padding: 1rem;
+  }
+
+  .welcome-card {
+    padding: 2rem 1.5rem;
+    border-radius: 18px;
+    margin-bottom: 1.5rem;
+  }
+
+  .welcome-card-content {
+    text-align: center;
+  }
+
+  .dashboard-title {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .welcome-emoji {
+    font-size: 1.75rem;
+  }
+
+  .dashboard-subtitle {
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+
+  .decorative-dots {
+    margin-top: 1.25rem;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* Stats - 2 Column Grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+    gap: 0.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 140px;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .stat-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.4rem;
+    top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-content {
+    width: 100%;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .stat-trend {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+  }
+
+  .stat-trend span {
+    font-size: 0.7rem;
+  }
+
+  /* Sections */
+  .recent-orders-section,
+  .quick-actions-section {
+    padding: 1.25rem;
+    border-radius: 14px;
+  }
+
+  .section-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .view-all-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  /* Hide table, show mobile cards */
+  .orders-table-container {
+    display: none;
+  }
+
+  .mobile-orders-list {
+    display: block;
+  }
+
+  .mobile-order-card {
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  /* Quick Actions */
+  .quick-actions-grid {
+    gap: 0.875rem;
+  }
+
+  .quick-action-card {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .quick-action-card:hover {
+    transform: translateX(0);
+    transform: scale(1.02);
+  }
+
+  .quick-action-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+
+  .quick-action-title {
+    font-size: 0.9rem;
+  }
+
+  .quick-action-desc {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  /* Alert Banner */
+  .alert-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem;
+    margin: 0 0 1.5rem 0;
+    border-radius: 12px;
+  }
+
+  .alert-banner i {
+    font-size: 1.75rem;
+  }
+
+  .alert-banner span {
+    font-size: 0.875rem;
+  }
+
+  .alert-action {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE (< 480px)
+======================================== */
+@media (max-width: 479px) {
+  .admin-dashboard {
+    padding: 0.75rem;
+  }
+
+  .welcome-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .dashboard-title {
+    font-size: 1.5rem;
+  }
+
+  .welcome-emoji {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-subtitle {
+    font-size: 0.875rem;
+  }
+
+  /* Stats - Single Column */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+
+  .stat-card {
+    min-height: auto;
+    padding: 1rem;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  .stat-value {
+    font-size: 1.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .recent-orders-section,
+  .quick-actions-section {
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1rem;
+  }
+
+  .mobile-order-card {
+    padding: 0.875rem;
+  }
+
+  .quick-action-card {
+    padding: 0.875rem;
+  }
+
+  .quick-action-icon {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ========================================
+   EXTRA SMALL MOBILE (< 360px)
+======================================== */
+@media (max-width: 359px) {
+  .admin-dashboard {
+    padding: 0.5rem;
+  }
+
+  .welcome-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .dashboard-title {
+    font-size: 1.35rem;
+  }
+
+  .welcome-emoji {
+    font-size: 1.35rem;
+  }
+
+  .dashboard-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .stat-card {
+    padding: 0.875rem;
+  }
+
+  .stat-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .stat-value {
+    font-size: 1.3rem;
+  }
+
+  .recent-orders-section,
+  .quick-actions-section {
+    padding: 0.875rem;
+  }
+}
+
+/* ========================================
+   FIX FOR PARENT LAYOUT PADDING
+======================================== */
+.seller-layout-content {
+  padding: 0 !important;
+  background: #f5f7fa !important;
+}
+/* ========================================
+   ANALYTICS OVERVIEW SECTION - ADD TO SellerDashboard.css
+======================================== */
+
+.analytics-overview-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.section-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-icon {
+  font-size: 1.5rem;
+  color: #1A73E8;
+}
+
+/* Analytics Quick Stats */
+.analytics-quick-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.analytics-quick-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.analytics-quick-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.analytics-quick-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.analytics-quick-icon.items-sold {
+  background: linear-gradient(195deg, #2196F3, #1565C0);
+}
+
+.analytics-quick-icon.avg-order {
+  background: linear-gradient(195deg, #9C27B0, #6A1B9A);
+}
+
+.analytics-quick-content {
+  flex: 1;
+}
+
+.analytics-quick-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #344767;
+  margin: 0 0 0.25rem 0;
+}
+
+.analytics-quick-label {
+  font-size: 0.8rem;
+  color: #67748e;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Top Products Preview */
+.top-products-preview {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #f0f2f5;
+}
+
+.subsection-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #344767;
+  margin: 0 0 1.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.subsection-title svg {
+  color: #1A73E8;
+}
+
+.top-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.top-product-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.top-product-card:hover {
+  background: white;
+  border-color: #1A73E8;
+  transform: translateX(4px);
+  box-shadow: 0 4px 15px rgba(26, 115, 232, 0.15);
+}
+
+.top-product-rank {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(76, 175, 80, 0.3);
+}
+
+.top-product-image {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.top-product-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.top-product-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #344767;
+  margin: 0 0 0.5rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.top-product-stats-inline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.top-product-stat {
+  font-size: 0.85rem;
+  color: #67748e;
+}
+
+.top-product-stat strong {
+  color: #344767;
+  font-weight: 700;
+}
+
+.top-product-revenue {
+  font-size: 1rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   TABLET RESPONSIVE (768px - 1024px)
+======================================== */
+@media (max-width: 1024px) {
+  .analytics-overview-section {
+    padding: 1.5rem;
+  }
+
+  .analytics-quick-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .analytics-quick-card {
+    padding: 1rem;
+  }
+
+  .analytics-quick-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.35rem;
+  }
+
+  .analytics-quick-value {
+    font-size: 1.35rem;
+  }
+
+  .top-products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE (< 768px)
+======================================== */
+@media (max-width: 767px) {
+  .analytics-overview-section {
+    padding: 1.25rem;
+    border-radius: 14px;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .section-header-left {
+    gap: 0.5rem;
+  }
+
+  .section-icon {
+    font-size: 1.25rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .view-all-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .analytics-quick-stats {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .analytics-quick-card {
+    padding: 1rem;
+  }
+
+  .analytics-quick-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+
+  .analytics-quick-value {
+    font-size: 1.3rem;
+  }
+
+  .analytics-quick-label {
+    font-size: 0.75rem;
+  }
+
+  .top-products-preview {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+  }
+
+  .subsection-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .top-products-grid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+
+  .top-product-card {
+    padding: 0.875rem;
+    flex-wrap: wrap;
+  }
+
+  .top-product-card:hover {
+    transform: translateY(-2px);
+    transform: translateX(0);
+  }
+
+  .top-product-rank {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  .top-product-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .top-product-info {
+    flex-basis: calc(100% - 100px);
+  }
+
+  .top-product-name {
+    font-size: 0.9rem;
+  }
+
+  .top-product-stats-inline {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e2e8f0;
+    justify-content: space-between;
+  }
+
+  .top-product-stat {
+    font-size: 0.8rem;
+  }
+
+  .top-product-revenue {
+    font-size: 0.95rem;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE (< 480px)
+======================================== */
+@media (max-width: 479px) {
+  .analytics-overview-section {
+    padding: 1rem;
+  }
+
+  .analytics-quick-card {
+    padding: 0.875rem;
+    gap: 0.875rem;
+  }
+
+  .analytics-quick-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.15rem;
+  }
+
+  .analytics-quick-value {
+    font-size: 1.2rem;
+  }
+
+  .top-product-card {
+    padding: 0.75rem;
+  }
+
+  .top-product-rank {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .top-product-image {
+    width: 45px;
+    height: 45px;
+  }
+
+  .top-product-name {
+    font-size: 0.85rem;
+  }
+
+  .top-product-stat {
+    font-size: 0.75rem;
+  }
+
+  .top-product-revenue {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,187 @@
+.MainBannerContainer {
+  background: linear-gradient(135deg, rgba(212, 244, 221, 0.95) 0%, rgba(200, 230, 208, 0.95) 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  padding: 50px 0;
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.MainBannerRow {
+  min-height: 400px;
+}
+
+.MainBannerContent {
+  padding: 20px 40px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.MainBannerHeading {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #2d3748;
+  line-height: 1.3;
+  margin-bottom: 30px;
+}
+
+.MainBannerButtons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.MainBannerButtonPrimary {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32) !important;
+  color: white !important;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none !important;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.MainBannerButtonPrimary:hover {
+  background-color: #38a169 !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+}
+
+.MainBannerButtonSecondary {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32) !important;
+  color: white !important;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none !important;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.MainBannerButtonSecondary:hover {
+  background-color: #38a169 !important;
+  color: white !important;
+ 
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+}
+
+.MainBannerArrow {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.MainBannerButtonSecondary:hover .MainBannerArrow {
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .MainBannerContainer {
+    min-height: 350px;
+  }
+  
+  .MainBannerHeading {
+    font-size: 2.2rem;
+  }
+  
+  .MainBannerContent {
+    padding: 30px 20px;
+  }
+  
+  .MainBannerRow {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .MainBannerContainer {
+    padding: 40px 15px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    min-height: 400px;
+    background-position: right center;
+  }
+  
+  .MainBannerHeading {
+    font-size: 1.75rem;
+    margin-bottom: 25px;
+    line-height: 1.4;
+    text-align: center;
+  }
+  
+  .MainBannerRow {
+    min-height: 400px;
+  }
+  
+  .MainBannerContent {
+    padding: 30px 15px;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .MainBannerButtons {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+  
+  .MainBannerButtonPrimary,
+  .MainBannerButtonSecondary {
+    width: 100%;
+    max-width: 280px;
+    padding: 14px 25px;
+    font-size: 0.95rem;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .MainBannerContainer {
+    padding: 35px 10px;
+    border-radius: 12px;
+    min-height: 380px;
+  }
+  
+  .MainBannerHeading {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .MainBannerContent {
+    padding: 25px 10px;
+    align-items: center;
+  }
+  
+  .MainBannerButtons {
+    width: 100%;
+    align-items: center;
+  }
+  
+  .MainBannerButtonPrimary,
+  .MainBannerButtonSecondary {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
+    display: block;
+    margin: 0 auto;
+  }
+}

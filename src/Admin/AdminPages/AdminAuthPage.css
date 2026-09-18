@@ -1,0 +1,298 @@
+/* ========================================
+   REMOVE GLOBAL BODY PADDING FOR SELLER AUTH PAGE
+======================================== */
+body:has(.admin-auth-page) {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* ========================================
+   EXECUTIVE DARK SLATE ADMIN AUTH PAGE
+======================================== */
+.admin-auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 30%, #1e293b 0%, #0f172a 100%);
+  padding: 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Security grid line overlay */
+.admin-auth-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.admin-auth-container {
+  width: 100%;
+  max-width: 480px;
+  animation: slideIn 0.4s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.admin-auth-content {
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(16, 185, 129, 0.15);
+  color: #f8fafc;
+}
+
+/* ========================================
+   SELLER AUTH HEADER
+======================================== */
+.admin-auth-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.admin-auth-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0;
+  color: #2d3748;
+}
+
+.admin-auth-title .text-success {
+  color: #198754;
+}
+
+.admin-auth-back-btn {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #718096;
+  cursor: pointer;
+  padding: 0;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.admin-auth-back-btn:hover {
+  color: #2d3748;
+  transform: scale(1.1);
+}
+
+/* ========================================
+   ERROR MESSAGE
+======================================== */
+.admin-auth-error {
+  background-color: #fee;
+  border: 1px solid #fcc;
+  color: #c33;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  animation: shake 0.3s ease;
+}
+
+/* ========================================
+   FORM STYLES
+======================================== */
+.auth-form-input-group {
+  margin-bottom: 1.25rem;
+}
+
+.auth-form-input-group label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.auth-form-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.auth-form-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.auth-form-input::placeholder {
+  color: #a0aec0;
+}
+
+/* ========================================
+   TOGGLE TEXT & LINK
+======================================== */
+.auth-form-toggle-text {
+  text-align: center;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+.auth-form-toggle-link {
+  background: none;
+  border: none;
+  color: #667eea;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.auth-form-toggle-link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+/* ========================================
+   SUBMIT BUTTON
+======================================== */
+.auth-form-submit-btn {
+  width: 100%;
+  padding: 0.95rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #198754 0%, #157347 100%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(25, 135, 84, 0.3);
+}
+
+.auth-form-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(25, 135, 84, 0.4);
+}
+
+.auth-form-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.auth-form-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+======================================== */
+
+/* Mobile (< 576px) */
+@media (max-width: 575.98px) {
+  .admin-auth-page {
+    padding: 1rem;
+  }
+
+  .admin-auth-content {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .admin-auth-title {
+    font-size: 1.5rem;
+  }
+
+  .auth-form-input-group {
+    margin-bottom: 1rem;
+  }
+
+  .auth-form-input {
+    padding: 0.75rem 0.875rem;
+    font-size: 0.95rem;
+  }
+
+  .auth-form-submit-btn {
+    padding: 0.85rem;
+    font-size: 1rem;
+  }
+}
+
+/* Tablet (576px - 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .admin-auth-content {
+    padding: 2rem;
+  }
+}
+
+/* Desktop (>= 768px) */
+@media (min-width: 768px) {
+  .admin-auth-page {
+    padding: 2rem;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+.auth-form-input:focus,
+.auth-form-submit-btn:focus,
+.auth-form-toggle-link:focus,
+.admin-auth-back-btn:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .admin-auth-container,
+  .auth-form-submit-btn,
+  .admin-auth-back-btn {
+    transition: none;
+    animation: none;
+  }
+}

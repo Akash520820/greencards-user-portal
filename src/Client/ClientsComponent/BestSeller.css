@@ -1,0 +1,94 @@
+/* ========================================
+   BESTSELLER SECTION
+======================================== */
+.bestseller-section {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+
+.bestseller-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+/* ========================================
+   BESTSELLER GRID
+======================================== */
+.bestseller-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+======================================== */
+
+/* Large Desktop (max-width: 1400px) */
+@media (max-width: 1400px) {
+  .bestseller-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+/* Desktop (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .bestseller-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet (max-width: 991px) */
+@media (max-width: 991px) {
+  .bestseller-section {
+    padding: 50px 0;
+  }
+  
+  .bestseller-title {
+    font-size: 2rem;
+    margin-bottom: 35px;
+  }
+  
+  .bestseller-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .bestseller-section {
+    padding: 40px 0;
+  }
+  
+  .bestseller-title {
+    font-size: 1.75rem;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .bestseller-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .bestseller-section {
+    padding: 35px 0;
+  }
+  
+  .bestseller-title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+  
+  .bestseller-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}

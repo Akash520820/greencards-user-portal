@@ -1,0 +1,227 @@
+.user-account-dropdown {
+  position: relative;
+}
+
+.user-account-dropdown-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-account-dropdown-btn:hover {
+  background-color: #f8f9fa;
+}
+
+/* Larger user icon for desktop */
+.user-account-dropdown-icon-circle svg {
+  color: #198754;
+  width: 32px;
+  height: 32px;
+}
+
+.user-account-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  min-width: 240px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1050;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.user-account-dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.user-account-dropdown-header {
+  padding: 1rem;
+}
+
+.user-account-dropdown-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-account-dropdown-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #198754 0%, #146c43 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.user-account-dropdown-details {
+  flex: 1;
+  overflow: hidden;
+}
+
+.user-account-dropdown-name {
+  margin: 0;
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-account-dropdown-email {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #718096;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-account-dropdown-divider {
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 0;
+}
+
+.user-account-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #2d3748;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.user-account-dropdown-item:hover {
+  background-color: #f7fafc;
+}
+
+.user-account-dropdown-item svg {
+  flex-shrink: 0;
+  color: #718096;
+}
+
+.user-account-dropdown-item:hover svg {
+  color: #198754;
+}
+
+/* Become a Seller Button - Special styling */
+.user-account-dropdown-seller-btn {
+  color: #FF6B35;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.user-account-dropdown-seller-btn svg {
+  color: #FF6B35;
+}
+
+.user-account-dropdown-seller-btn:hover {
+  background-color: #fff5f0;
+  color: #FF5722;
+}
+
+.user-account-dropdown-seller-btn:hover svg {
+  color: #FF5722;
+}
+
+/* Logout Button */
+.user-account-dropdown-logout-btn {
+  color: #e53e3e;
+  border-top: 1px solid #e2e8f0;
+}
+
+.user-account-dropdown-logout-btn:hover {
+  background-color: #fff5f5;
+}
+
+.user-account-dropdown-logout-btn svg {
+  color: #e53e3e;
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+  /* Smaller icon on mobile */
+  .user-account-dropdown-icon-circle svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .user-account-dropdown-menu {
+    position: absolute;
+    top: auto;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(10px);
+    max-height: 300px;
+    width: 280px;
+  }
+
+  .user-account-dropdown-menu.show {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (max-width: 576px) {
+  /* Even smaller icon on small mobile */
+  .user-account-dropdown-icon-circle svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .user-account-dropdown-menu {
+    width: 260px;
+    max-height: 280px;
+  }
+
+  .user-account-dropdown-header {
+    padding: 0.875rem;
+  }
+
+  .user-account-dropdown-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .user-account-dropdown-name {
+    font-size: 0.9rem;
+  }
+
+  .user-account-dropdown-email {
+    font-size: 0.75rem;
+  }
+
+  .user-account-dropdown-item {
+    padding: 0.65rem 0.875rem;
+    font-size: 0.875rem;
+  }
+}

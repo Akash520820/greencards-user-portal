@@ -1,0 +1,279 @@
+/* ========================================
+   NAVBAR - FIXED POSITION
+======================================== */
+
+/* Apply fixed position to navbar with high specificity */
+nav.navbar.navbar-expand-lg.navbar-container {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: white !important;
+  padding: 0.75rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styles */
+.navbar-logo {
+  height: 40px;
+  transition: height 0.3s ease;
+}
+
+.navbar-brand-text {
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #2E7D32;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  .navbar-brand-text {
+    font-size: 1.1rem;
+  }
+}
+
+/* Navbar Toggler Custom Size */
+.navbar-toggler {
+  padding: 0.25rem 0.4rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(0,0,0,.1);
+}
+
+.navbar-toggler-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.navbar-link {
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+.navbar-link:hover {
+  background-color: #f8f9fa;
+  color: #495057;
+}
+
+.navbar-link.active {
+  color: #4CAF50 !important;
+  background-color: #e7f5ec;
+  font-weight: 600;
+}
+
+/* Become a Seller Button Styling */
+.navbar-seller-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #FF6B35 !important;
+  font-weight: 600 !important;
+}
+
+.navbar-seller-link:hover {
+  background-color: #fff0ec !important;
+  color: #FF5722 !important;
+}
+
+.navbar-login-btn {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.navbar-login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Desktop - Show cart and login next to search */
+.navbar-desktop-cart-login {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Mobile - Hide this version */
+.navbar-mobile-cart-login {
+  display: none;
+}
+
+/* Mobile user display */
+.navbar-mobile-user-display {
+  display: none;
+}
+
+/* Breakpoint at 1200px - Start adjusting spacing */
+@media (max-width: 1199px) {
+  .navbar-link {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.95rem;
+  }
+  
+  .navbar-login-btn {
+    padding: 0.45rem 1.2rem;
+    font-size: 0.95rem;
+  }
+  
+  .navbar-actions {
+    gap: 0.7rem;
+  }
+  
+  .navbar-desktop-cart-login {
+    gap: 0.7rem;
+  }
+}
+
+/* Breakpoint at 1100px - Further compression */
+@media (max-width: 1099px) {
+  .navbar-logo {
+    height: 36px;
+  }
+  
+  .navbar-link {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .navbar-login-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .navbar-actions {
+    gap: 0.5rem;
+    margin-left: 0.5rem !important;
+  }
+  
+  .navbar-desktop-cart-login {
+    gap: 0.5rem;
+  }
+}
+
+/* Tablet/Mobile breakpoint at 1000px - Switch to hamburger menu */
+@media (max-width: 1000px) {
+  nav.navbar.navbar-expand-lg.navbar-container {
+    padding: 0.6rem 0;
+  }
+  
+  .navbar-logo {
+    height: 35px;
+  }
+  
+  /* Show hamburger */
+  .navbar-toggler {
+    display: block !important;
+  }
+  
+  /* Collapsed menu items should be full width when expanded */
+  .navbar-collapse .navbar-nav {
+    margin-top: 1rem;
+  }
+  
+  .navbar-link {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    margin: 0.2rem 0;
+  }
+  
+  /* Hide CartBadge in collapsed menu */
+  .navbar-actions .navbar-desktop-cart-login > *:first-child {
+    display: none !important;
+  }
+  
+  /* Move actions inside collapsed menu */
+  .navbar-actions {
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .navbar-desktop-cart-login {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .navbar-login-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* Mobile Styles (below 768px) - Show only logo */
+@media (max-width: 767px) {
+  /* Keep navbar visible but minimal - still fixed */
+  nav.navbar.navbar-expand-lg.navbar-container {
+    display: block !important;
+    padding: 0.5rem 0;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+  
+  /* Show only the logo - centered */
+  .navbar-brand {
+    display: flex !important;
+    margin: 0 auto !important;
+  }
+  
+  .navbar-logo {
+    height: 32px;
+  }
+  
+  /* Hide hamburger toggle */
+  .navbar-toggler {
+    display: none !important;
+  }
+  
+  /* Hide navbar menu */
+  .navbar-collapse {
+    display: none !important;
+  }
+  
+  /* Center align the container */
+  .navbar-container .container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  /* Force hide all other navbar elements */
+  .navbar-actions,
+  .navbar-desktop-cart-login,
+  .navbar-nav {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+/* Large Desktop - Full spacing */
+@media (min-width: 1200px) {
+  nav.navbar.navbar-expand-lg.navbar-container {
+    padding: 0.75rem 0;
+  }
+  
+  .navbar-link {
+    padding: 0.5rem 1rem;
+  }
+}

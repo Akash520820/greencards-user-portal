@@ -1,0 +1,173 @@
+/* Footer Styles */
+.footer {
+  background-color: #f8f9fa;
+  color: #6b7280;
+  font-size: 0.9rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Brand Section */
+.footer-brand {
+  max-width: 400px;
+}
+
+.brand-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+  color: #22c55e;
+}
+
+.footer-description {
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Footer Headings */
+.footer-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+/* Footer Links */
+.footer-links ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-link {
+  color: #6b7280;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.footer-link:hover {
+  color: #22c55e;
+  padding-left: 5px;
+}
+
+.footer-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #22c55e;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::before {
+  width: 30px;
+}
+
+/* Social Links */
+.footer-social ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-social li {
+  margin-bottom: 0.5rem;
+}
+
+/* Divider */
+.footer-divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 1.25rem 0 1rem 0;
+}
+
+/* Copyright */
+.footer-copyright {
+  color: #6b7280;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .footer {
+    text-align: left;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .brand-name {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding-top: 1.25rem;
+  }
+
+  .brand-name {
+    font-size: 1.3rem;
+  }
+
+  .footer-heading {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-description {
+    font-size: 0.85rem;
+  }
+
+  .footer-links li,
+  .footer-social li {
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-link {
+    font-size: 0.85rem;
+  }
+
+  .footer-divider {
+    margin: 1rem 0 0.75rem 0;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer .col-6 {
+    width: 50%;
+  }
+
+  .brand-name {
+    font-size: 1.3rem;
+  }
+
+  .footer-heading {
+    font-size: 0.95rem;
+  }
+
+  .footer-link {
+    font-size: 0.85rem;
+  }
+}
