@@ -22,6 +22,14 @@ import PaymentMethods from './Client/ClientPages/PaymentMethods';
 import Wishlist from './Client/ClientPages/Wishlist';
 import NotFound from './Client/ClientsComponent/NotFound';
 
+const getBasename = () => {
+  const path = window.location.pathname;
+  if (path.startsWith('/greencards-user-portal')) {
+    return '/greencards-user-portal';
+  }
+  return '/';
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -43,7 +51,7 @@ const router = createBrowserRouter([
     ],
   },
   { path: "*", element: <NotFound /> },
-]);
+], { basename: getBasename() });
 
 function App() {
   return (
