@@ -1,4 +1,5 @@
-# GreenCards — Frontend
+# GreenCards Customer Portal Storefront
+
 
 This is the GreenCards storefront + admin panel, rebuilt from the original
 CreenCart frontend to run against the real `ecommerce-backend` API instead
