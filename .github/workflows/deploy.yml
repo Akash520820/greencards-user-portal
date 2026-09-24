@@ -32,9 +32,8 @@ jobs:
 
       - name: Build
         env:
-          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_API_URL: ${{ secrets.VITE_API_URL || 'https://greencards-api-gateway.onrender.com/api/v1' }}
           VITE_RAZORPAY_KEY_ID: ${{ secrets.VITE_RAZORPAY_KEY_ID }}
-          VITE_BASE_PATH: /GreenCards/
         run: npm run build
 
       - name: Add SPA fallback (404.html)
